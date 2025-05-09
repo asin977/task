@@ -8,6 +8,12 @@ const colsInput = document.getElementById("cols");
 const inputX = document.getElementById("inputX");
 const inputY = document.getElementById("inputY");
 
+rowsInput.disabled = false;
+colsInput.disabled = false;
+markBtn.disabled = true;
+clearBtn.disabled = true;
+resetBtn.disabled = true;
+
 let cellValues = [];
 let rowCount = 0;
 let colCount = 0;
@@ -65,6 +71,10 @@ function markCell() {
   if (cells[index]) {
     cells[index].classList.add("marked");
   }
+  drawBtn.disabled = true;
+  resetBtn.disabled = false;
+  markBtn.disabled = true;
+  clearBtn.disabled = false;
 }
 
 function resetGrid() {
@@ -74,7 +84,7 @@ function resetGrid() {
   drawBtn.disabled = false;
   markBtn.disabled = true;
   clearBtn.disabled = true;
-  resetBtn.disabled = false;
+  resetBtn.disabled = true;
 
 
   inputX.disabled = true;
