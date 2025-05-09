@@ -1,0 +1,101 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: black;
+  color: #fff;
+  overflow-x: scroll;
+
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.controls input {
+  margin-right: 10px;
+  margin-left: 31px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+#grid {
+  display: grid;
+  gap: 4px;
+  margin-top: 20px;
+  margin-left: 34px;
+  justify-content: center;
+}
+
+.cells {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.x1 {
+  background-color: #fff;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.x0 {
+  background-color: #fff;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.marked {
+  background-color: rgb(255, 167, 4);
+  color: black;
+  font-weight: bold;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button {
+  cursor: pointer;
+}
+
+label {
+  padding: 10px;
+
+}
+
+.inputX,
+.inputY :disabled {
+  background-color: azure;
+}
+
+button {
+  border: none;
+  background-color: rgb(255, 167, 4);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5px;
+  padding: 5px 6px;
+}
+
+.reset {
+  margin-top: 10px;
+}
+
+@media screen and (min-width:375px) {
+  button {
+    margin-left: 12px;
+  }
+}
