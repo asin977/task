@@ -79,5 +79,40 @@ function resetGrid() {
     grid.innerHTML = "";
 
     drawBtn.disabled = false;
-    
+    resetBtn.disabled = false;
+    markBtn.disabled = true;
+    clearBtn.disabled = false;
+
+    inputX.value = '';
+    inputY.value = "";
+    rowsInput.value = "";
+    colsInput.value = "";
+
 }
+
+function clearGrid() {
+    const cells = document.querySelectorAll("#grid cell");
+    cellValues.forEach((item,i)=> {
+        const cell = cells[i];
+        if (cell) {
+            cell.className = 'cell' + (item.value === 1 ? 'x1' : 'x0');
+            cell.textContent = `${item.x},${item.y}`;
+        }
+    });
+}
+
+inputX.disabled = true;
+inputY.disabled = true;
+
+inputX.addEventListener("focus",()=>{
+    rowsInput.disabled = true;
+    colsInput.disabled = true;
+
+});
+inputY.addEventListener("focus",()=> {
+    rowsInput.disabled = true;
+    colsInput.disabled = true;
+});
+
+
+

@@ -135,8 +135,3 @@ resetBtn.addEventListener("click", resetGrid);
 
 
 
-
-
-
-
-

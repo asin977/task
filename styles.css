@@ -85,7 +85,6 @@ label {
   padding: 10px;
 
 }
-
 .inputX,
 .inputY :disabled {
   background-color: azure;
@@ -185,3 +184,5 @@ button {
   } 
 }
 }
+
+
