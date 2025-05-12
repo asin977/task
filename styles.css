@@ -31,7 +31,7 @@ input:active,:focus {
   display: grid;
   gap: 4px;
   margin-top: 20px;
-  margin-left: 34px;
+  margin-left:-7px;
   justify-content: center;
 }
 
@@ -39,7 +39,7 @@ input:active,:focus {
   width: 60px;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   font-weight: bold;
   font-size: 12px;
@@ -48,7 +48,10 @@ input:active,:focus {
   text-align: center;
   transition: all 0.2s ease;
 }
-
+/* .cell {
+  width: 10px;
+  height: 10px;
+} */
 .x1 {
   background-color: #fff;
   color: white;
