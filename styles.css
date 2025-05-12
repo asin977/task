@@ -109,7 +109,10 @@ button {
     margin-left: 12px;
   }
 }
-
+@media screen and (min-width:389px) {
+  .controls input {
+    margin-left:56px;
+}
 @media screen and (min-width:425px) {
   .controls input {
     margin-right: 51px;
@@ -124,4 +127,57 @@ button {
     margin-left: 17px
   }
 }
- 
+@media screen and (min-width:468px) {
+  .controls input {
+    margin-left:137px;
+  }
+}
+@media screen and (min-width:532px) {
+  .controls input {
+    margin-left:145px;
+  }
+}
+@media screen and (min-width:768px) {
+  .controls input {
+    margin-left:423px;
+
+  }
+}
+
+@media screen and (min-width:968px) {
+  .controls input {
+    margin-left:813px;
+
+  }
+}
+@media screen and (min-width:1208px) {
+  .controls input {
+    margin-left:1000px;
+  }
+}
+
+@media screen and (min-width:1395px) {
+    .controls input {
+      margin-left:1012px;
+    }
+}
+@media screen and (min-width:1407px) {
+    .controls input {
+      margin-left:1020px;
+    } 
+}
+@media screen and (min-width:1414px) {
+  .controls input {
+    margin-left:1030px;
+  } 
+}
+@media screen and (min-width:1424px) {
+  .controls input {
+    margin-left:1030px;
+  } 
+}
+@media screen and (min-width:1800px) {
+  .controls input {
+    margin-left:1500px;
+  } 
+}
