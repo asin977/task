@@ -42,5 +42,42 @@ function drawGrid()   {
             grid.appendChild(cell);
         }
     }
+    inputX.disabled = true;
+    inputY.disabeld = false;
+    rowsInput.disabled = false;
+    colsInput.disabled = false;
 
+    drawBtn.disabled = true;
+    markBtn.disabled = false;
+    clearBtn.disabled = false;
+    resetBtn.disabled = false;
+}
+
+function markCell() {
+    const x = parseInt(inputX.value);
+    const y = parseInt(inputY.value);
+
+    if(isNaN(x) || isNaN(y)) {
+        alert("Please enter both X and Y values.");
+        return;
+    }
+    if (x < 0 || y < 0 || x >= rowCount || y >= colCount) {
+        alert("please enter valid X and Y values within the grid size");
+        return;
+    }
+
+    const index = (rowCount - 1 - x)* colCount + y;
+    const cells = document.querySelectorAll("#grid .cell");
+    cells.forEach(cell => cell.classList.remove("marked"));
+    if (cells[index]) {
+        cells[index].classList.add("marked");
+    }
+
+}
+function resetGrid() {
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+
+    drawBtn.disabled = false;
+    
 }

@@ -14,6 +14,8 @@ body {
 
 h2 {
   text-align: center;
+  color:goldenrod;
+  font-family: sans-serif;
 }
 input:active,:focus {
   border:none;
@@ -58,14 +60,12 @@ input:active,:focus {
   font-size: 18px;
   text-align: center;
 }
-
 .x0 {
   background-color: #fff;
   color: #fff;
   font-size: 18px;
   text-align: center;
 }
-
 .marked {
   background-color: rgb(255, 167, 4);
   color: black;
