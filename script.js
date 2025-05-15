@@ -33,7 +33,7 @@ function drawGrid() {
   grid.innerHTML = '';
   cellValues = [];
 
-  // Loop through rows (Y-axis) and columns (X-axis)
+  
   for (let y = rowCount - 1; y >= 0; y--) {
     for (let x = 0; x < colCount; x++) {
       const value = Math.round(Math.random());
