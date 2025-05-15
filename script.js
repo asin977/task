@@ -23,19 +23,25 @@ function drawGrid() {
   colCount = parseInt(colsInput.value);
   const grid = document.getElementById("grid");
 
+  if (isNaN(rowCount) || isNaN(colCount) || rowCount <= 0 || colCount <= 0) {
+    alert("Please enter valid positive numbers for Rows and Columns.");
+    return;
+  }
+
   grid.style.gridTemplateColumns = `repeat(${colCount}, 39px)`;
   grid.style.gridTemplateRows = `repeat(${rowCount}, 37px)`;
   grid.innerHTML = '';
   cellValues = [];
 
-  for (let row = rowCount - 1; row >= 0; row--) {
-    for (let col = 0; col < colCount; col++) {
+  // Loop through rows (Y-axis) and columns (X-axis)
+  for (let y = rowCount - 1; y >= 0; y--) {
+    for (let x = 0; x < colCount; x++) {
       const value = Math.round(Math.random());
-      cellValues.push({ x: row, y: col, value });
+      cellValues.push({ x: x, y: y, value });
 
       const cell = document.createElement('div');
       cell.className = 'cell ' + (value === 1 ? 'x1' : 'x0');
-      cell.textContent = `(${row},${col})`;
+      cell.textContent = `(${x},${y})`;
       grid.appendChild(cell);
     }
   }
@@ -60,20 +66,22 @@ function markCell() {
     return;
   }
 
-  if (x < 0 || y < 0 || x >= rowCount || y >= colCount) {
+  if (x < 0 || y < 0 || x >= colCount || y >= rowCount) {
     alert("Please enter valid X and Y values within grid size.");
     return;
   }
 
-  const index = (rowCount - 1 - x) * colCount + y;
+  const index = (rowCount - 1 - y) * colCount + x;
   const cells = document.querySelectorAll('#grid .cell');
   cells.forEach(cell => cell.classList.remove("marked"));
+
   if (cells[index]) {
     cells[index].classList.add("marked");
   }
+
   drawBtn.disabled = true;
   resetBtn.disabled = false;
-  markBtn.disabled = true;
+  markBtn.disabled = false;
   clearBtn.disabled = false;
 }
 
@@ -86,13 +94,11 @@ function resetGrid() {
   clearBtn.disabled = true;
   resetBtn.disabled = true;
 
-
   inputX.disabled = true;
   inputY.disabled = true;
   rowsInput.disabled = false;
   colsInput.disabled = false;
 
-  
   inputX.value = '';
   inputY.value = '';
   rowsInput.value = '';
@@ -110,10 +116,8 @@ function clearGrid() {
   });
 }
 
-
 inputX.disabled = true;
 inputY.disabled = true;
-
 
 inputX.addEventListener("focus", () => {
   rowsInput.disabled = true;
@@ -124,14 +128,7 @@ inputY.addEventListener("focus", () => {
   colsInput.disabled = true;
 });
 
-
 drawBtn.addEventListener("click", drawGrid);
 markBtn.addEventListener("click", markCell);
 clearBtn.addEventListener("click", clearGrid);
 resetBtn.addEventListener("click", resetGrid);
-
-
-
-
-
-
